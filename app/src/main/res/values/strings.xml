@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MVVM DI Example</string>
+
+    <string name="btn_save">Save</string>
+    <string name="lbl_name">Name</string>
+    <string name="lbl_age">Age</string>
+</resources>
