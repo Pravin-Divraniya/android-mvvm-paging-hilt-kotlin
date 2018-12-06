@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="gallery_image_urls">
+        <item>http://api.learn2crack.com/android/images/donut.png</item>
+        <item>"http://api.learn2crack.com/android/images/eclair.png"</item>
+        <item>http://api.learn2crack.com/android/images/froyo.png</item>
+        <item>http://api.learn2crack.com/android/images/ginger.png</item>
+        <item>http://api.learn2crack.com/android/images/honey.png</item>
+        <item>http://api.learn2crack.com/android/images/icecream.png</item>
+        <item>http://api.learn2crack.com/android/images/jellybean.png</item>
+        <item>http://api.learn2crack.com/android/images/kitkat.png</item>
+        <item>http://api.learn2crack.com/android/images/lollipop.png</item>
+        <item>http://api.learn2crack.com/android/images/marshmallow.png</item>
+        <item>http://www.androidguys.com/wp-content/uploads/2016/11/Want-Some-Nougat.jpg</item>
+        <item>https://theleaker.com/wp-content/uploads/2017/08/Android-8.0-Oreo.jpg</item>
+        <item>https://boygeniusreport.files.wordpress.com/2018/03/android-p1.jpg?quality=98&amp;strip=all&amp;w=782</item>
+
+        <item>http://api.learn2crack.com/android/images/donut.png</item>
+        <item>"http://api.learn2crack.com/android/images/eclair.png"</item>
+        <item>http://api.learn2crack.com/android/images/froyo.png</item>
+        <item>http://api.learn2crack.com/android/images/ginger.png</item>
+        <item>http://api.learn2crack.com/android/images/honey.png</item>
+        <item>http://api.learn2crack.com/android/images/icecream.png</item>
+        <item>http://api.learn2crack.com/android/images/jellybean.png</item>
+        <item>http://api.learn2crack.com/android/images/kitkat.png</item>
+        <item>http://api.learn2crack.com/android/images/lollipop.png</item>
+        <item>http://api.learn2crack.com/android/images/marshmallow.png</item>
+        <item>http://www.androidguys.com/wp-content/uploads/2016/11/Want-Some-Nougat.jpg</item>
+        <item>https://theleaker.com/wp-content/uploads/2017/08/Android-8.0-Oreo.jpg</item>
+        <item>https://boygeniusreport.files.wordpress.com/2018/03/android-p1.jpg?quality=98&amp;strip=all&amp;w=782</item>
+    </array>
+</resources>

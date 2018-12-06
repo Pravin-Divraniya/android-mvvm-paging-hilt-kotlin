@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.clarion.mvvmdiexample.view.activity.AddPersonActivity">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="addViewmodel"
+            type="com.clarion.mvvmdiexample.viewmodel.activity.AddPersonViewModel"/>
+    </data>
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="@string/title_add_person_activity"/>
+
+    </android.support.design.widget.AppBarLayout>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:addTextChangedListener="@{addViewmodel.onPersonNameChanged}"
+            android:text="@{addViewmodel.personName}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/editText2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.008"/>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/lbl_name"
+            app:layout_constraintBaseline_toBaselineOf="@+id/editText1"
+            app:layout_constraintEnd_toStartOf="@+id/editText1"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/lbl_age"
+            app:layout_constraintBaseline_toBaselineOf="@+id/editText2"
+            app:layout_constraintEnd_toStartOf="@+id/editText2"
+            app:layout_constraintStart_toStartOf="parent" />
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:addTextChangedListener="@{addViewmodel.onPersonAgeChanged}"
+            android:text="@{addViewmodel.personAge}"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText1" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="48dp"
+            android:text="@string/btn_save"
+            android:onClick="@{addViewmodel.onSaveClick}"
+            android:enabled="@{addViewmodel.isValid}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    </android.support.constraint.ConstraintLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

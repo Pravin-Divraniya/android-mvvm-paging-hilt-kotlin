@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.clarion.mvvmdiexample.view.fragment.RemoteDataFragment"
+    android:name="com.clarion.mvvmdiexample.view.fragment.RemoteDataFragment">
+    <data>
+        <variable
+            name="myDialogViewModel"
+            type="com.clarion.mvvmdiexample.viewmodel.fragment.MyDialogFrgViewModel" />
+
+    </data>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp">
+
+        <Button
+            android:id="@+id/btn_update"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_update"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            android:onClick="@{myDialogViewModel.onUpdateClick}"/>
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/btn_delete"
+            app:layout_constraintEnd_toEndOf="@id/btn_update"
+            app:layout_constraintStart_toStartOf="@id/btn_update"
+            app:layout_constraintTop_toBottomOf="@id/btn_update"
+            android:onClick="@{myDialogViewModel.onDeleteClick}"/>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/dialog_title_confirm"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

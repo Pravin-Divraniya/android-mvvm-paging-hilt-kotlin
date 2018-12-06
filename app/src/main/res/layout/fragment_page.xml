@@ -1,0 +1,23 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.clarion.mvvmdiexample.view.fragment.PageFragment">
+    <data>
+        <variable
+            name="pagerFrgViewModel"
+            type="com.clarion.mvvmdiexample.viewmodel.fragment.PageFrgViewModel"/>
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:id="@+id/txtPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:text="@{pagerFrgViewModel.pageText}"/>
+    </FrameLayout>
+</layout>
