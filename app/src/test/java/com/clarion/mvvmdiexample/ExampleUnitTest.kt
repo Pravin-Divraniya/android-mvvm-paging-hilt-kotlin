@@ -1,4 +1,4 @@
-package com.clarion.mvvmdiexample
+package com.pravin.mvvmdiexample
 
 import org.junit.Test
 

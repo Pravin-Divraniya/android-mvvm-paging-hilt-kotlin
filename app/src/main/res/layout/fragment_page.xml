@@ -1,10 +1,10 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.clarion.mvvmdiexample.view.fragment.PageFragment">
+    tools:context="com.pravin.mvvmdiexample.view.fragment.PageFragment">
     <data>
         <variable
             name="pagerFrgViewModel"
-            type="com.clarion.mvvmdiexample.viewmodel.fragment.PageFrgViewModel"/>
+            type="com.pravin.mvvmdiexample.viewmodel.fragment.PageFrgViewModel"/>
     </data>
     <FrameLayout
         android:layout_width="match_parent"

@@ -1,35 +1,59 @@
 package com.pravin.mvvmdiexample.view.activity
 
-import android.content.Intent
 import android.os.Bundle
 import com.pravin.mvvmdiexample.BR
+import com.pravin.mvvmdiexample.view.fragment.MainFragment
+import com.pravin.mvvmdiexample.view.navigator.MainActivityNavigator
+import com.pravin.mvvmdiexample.viewmodel.activity.MainViewModel
 import com.pravin.mvvmdiexample.R
 import com.pravin.mvvmdiexample.databinding.ActivityMainBinding
-import com.pravin.mvvmdiexample.view.navigator.MainActivityNavigator
 import javax.inject.Inject
-import com.pravin.mvvmdiexample.viewmodel.MainActivityViewModel
 
+/**
+ * Created by Pravin Divraniya
+ */
+class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>()
+        ,MainActivityNavigator {
 
-class MainActivity : BaseActivity<ActivityMainBinding,MainActivityViewModel>(),MainActivityNavigator {
     @Inject
-    protected lateinit var viewModel: MainActivityViewModel
-    private lateinit var mMainActBinding:ActivityMainBinding
+    protected lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         init()
     }
-    fun init(){
-        mMainActBinding = getViewDataBinding()
-        viewModel.setNavigator(this)
-    }
-    override fun getLayoutId() = R.layout.activity_main
-    override fun getBindingVariable() = BR.viewmodel
-    override fun getMyViewModel() = viewModel
 
-    override fun openListActivity() {
-        val intent = Intent(this,MainListActivity::class.java)
-        startActivity(intent)
+    fun init(){
+        viewModel.setNavigator(this)
+        startLocationUpdates()
+        openMainFragment()
     }
+
+    private fun openMainFragment() {
+        viewModel.setFrgTitle(getString(R.string.title_main_fragment))
+
+        val ft = supportFragmentManager.beginTransaction()
+        var fragment = supportFragmentManager.findFragmentByTag(MainFragment.TAG)
+
+        if(null == fragment) {
+            fragment = MainFragment.newInstance(getApiKey(), viewModel)
+
+            ft.disallowAddToBackStack()
+                    .add(R.id.frg_container, fragment,
+                            MainFragment.TAG)
+                    .commit()
+        }
+    }
+
+    override fun onBackPressed() {
+        hideLoading()
+        hideKeyboard()
+        viewModel.setFrgTitle(getString(R.string.title_main_fragment))
+        super.onBackPressed()
+    }
+
+    override fun getBindingVariable() = BR.mainViewModel
+    override fun getMyViewModel() = viewModel
+    override fun getLayoutId()= R.layout.activity_main
+
 }

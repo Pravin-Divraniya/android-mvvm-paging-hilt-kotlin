@@ -8,9 +8,9 @@
     <data>
         <variable
             name="mainFrgViewModel"
-            type="com.clarion.mvvmdiexample.viewmodel.fragment.MainFrgViewModel"/>
+            type="com.pravin.mvvmdiexample.viewmodel.fragment.MainFrgViewModel"/>
     </data>
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/act_btn_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -71,5 +71,5 @@
             app:layout_constraintTop_toBottomOf="@+id/btnVP"
             android:onClick="@{mainFrgViewModel.onGalleryViewClick}"/>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
