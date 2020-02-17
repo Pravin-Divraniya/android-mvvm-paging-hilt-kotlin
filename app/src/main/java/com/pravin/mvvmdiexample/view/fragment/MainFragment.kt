@@ -26,7 +26,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class MainFragment : BaseFragment<FragmentMainBinding,MainFrgViewModel>(),MainFrgNavigator {
 
-    private var apiKey: String? = null
+    private lateinit var apiKey: String
     private var actViewModel:MainViewModel? = null
 
     @Inject
@@ -36,7 +36,7 @@ class MainFragment : BaseFragment<FragmentMainBinding,MainFrgViewModel>(),MainFr
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            apiKey = it.getString(ARG_PARAM1)
+            apiKey = it.getString(ARG_PARAM1).toString()
         actViewModel = it.getSerializable(ARG_PARAM2) as MainViewModel? }
     }
 
@@ -66,7 +66,7 @@ class MainFragment : BaseFragment<FragmentMainBinding,MainFrgViewModel>(),MainFr
         var fragment = fragmentManager?.findFragmentByTag(RemoteDataFragment.TAG)
 
         if(null == fragment)
-            fragment = RemoteDataFragment.newInstance(apiKey!!)
+            fragment = RemoteDataFragment.newInstance(apiKey)
 
         ft!!.replace(R.id.frg_container, fragment,
                 RemoteDataFragment.TAG)

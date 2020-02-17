@@ -23,7 +23,7 @@ project.ext {
     locationServices = "17.0.0"
     dexter = "4.2.0"
     glide = "4.9.0"
-    lifecycle = "1.1.1"
+    lifecycle = "2.2.0"
 }
 
 android {
@@ -115,5 +115,5 @@ dependencies {
     kapt "com.github.bumptech.glide:compiler:$project.glide"
 
     //arch component lifecycle extensions
-    implementation "android.arch.lifecycle:extensions:$project.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-extensions:$project.lifecycle"
 }
