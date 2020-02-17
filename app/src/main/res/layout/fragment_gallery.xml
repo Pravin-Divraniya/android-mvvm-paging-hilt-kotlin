@@ -6,7 +6,7 @@
     <data>
         <variable
             name="galleryViewModel"
-            type="com.clarion.mvvmdiexample.viewmodel.fragment.GalleryViewModel"/>
+            type="com.pravin.mvvmdiexample.viewmodel.fragment.GalleryViewModel"/>
     </data>
 <LinearLayout
     android:layout_width="match_parent"
@@ -32,7 +32,7 @@
             />  <!--android:onCheckedChanged="@{galleryViewModel.onSelectAllCheckListener}"-->
     </FrameLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcGalleryView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.clarion.mvvmdiexample">
+    package="com.pravin.mvvmdiexample">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name="com.clarion.mvvmdiexample.app.MyApplication"
+        android:name="com.pravin.mvvmdiexample.app.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.clarion.mvvmdiexample.view.activity.MainActivity"
+            android:name="com.pravin.mvvmdiexample.view.activity.MainActivity"
             android:screenOrientation="sensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,25 +24,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.clarion.mvvmdiexample.view.activity.PersonListActivity"
+            android:name="com.pravin.mvvmdiexample.view.activity.PersonListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.clarion.mvvmdiexample.view.activity.AddPersonActivity"
+            android:name="com.pravin.mvvmdiexample.view.activity.AddPersonActivity"
             android:screenOrientation="portrait" />
 
         <service
-            android:name="com.clarion.mvvmdiexample.services.LocationService"
+            android:name="com.pravin.mvvmdiexample.services.LocationService"
             android:exported="false" />
 
         <receiver
-            android:name="com.clarion.mvvmdiexample.receiver.LocationReceiver"
+            android:name="com.pravin.mvvmdiexample.receiver.LocationReceiver"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.clarion.mvvmdiexample.receiver.LocationReceiver.ACTION_PROCESS_UPDATES" />
+                <action android:name="com.pravin.mvvmdiexample.receiver.LocationReceiver.ACTION_PROCESS_UPDATES" />
             </intent-filter>
         </receiver>
 
-        <activity android:name="com.clarion.mvvmdiexample.view.activity.PagerActivity"
+        <activity android:name="com.pravin.mvvmdiexample.view.activity.PagerActivity"
             android:screenOrientation="portrait" />
     </application>
 

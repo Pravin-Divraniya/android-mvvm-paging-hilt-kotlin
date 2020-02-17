@@ -5,8 +5,8 @@
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_clarion_mvvmdiexample_view_activity_BaseActivity_getApiKey(
+Java_com_pravin_mvvmdiexample_view_activity_BaseActivity_getApiKey(
         JNIEnv* pEnv,
         jclass jclazz) {
-    return pEnv->NewStringUTF("743ba4a259034e3ca6a3e7de37786ecd");
+    return pEnv->NewStringUTF("Your_API_KEY");
 }

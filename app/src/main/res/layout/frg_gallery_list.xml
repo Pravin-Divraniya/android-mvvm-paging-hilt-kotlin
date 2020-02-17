@@ -8,9 +8,9 @@
         <import type="android.view.View" />
         <variable
             name="galleryItemViewModel"
-            type="com.clarion.mvvmdiexample.viewmodel.list.GalleryItemViewModel" />
+            type="com.pravin.mvvmdiexample.viewmodel.list.GalleryItemViewModel" />
     </data>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <ImageView
@@ -35,5 +35,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         android:saveEnabled="false"/>
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

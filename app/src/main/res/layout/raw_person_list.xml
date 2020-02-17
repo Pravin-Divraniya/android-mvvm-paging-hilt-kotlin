@@ -6,9 +6,9 @@
         <import type="android.view.View"/>
         <variable
             name="personItemViewmodel"
-            type="com.clarion.mvvmdiexample.viewmodel.list.PersonItemViewModel"/>
+            type="com.pravin.mvvmdiexample.viewmodel.list.PersonItemViewModel"/>
     </data>
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="2dp"
@@ -17,7 +17,7 @@
         android:padding="8dp"
         android:layout_margin="8dp"
         android:onLongClick="@{personItemViewmodel.getOnLongClick}">
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -72,6 +72,6 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:textColor="#000000" />
         <!--@{personItemViewmodel.personAge}-->
-    </android.support.constraint.ConstraintLayout>
-    </android.support.v7.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </layout>
