@@ -10,6 +10,7 @@ project.ext {
     androidx="1.1.0"
     jUnit = "4.12"
     daggerVersion = "2.23.2"
+    daggerAndroidSupport = "2.26"
     roomVersion = "2.2.3"
     rxkotlin="2.4.0"
     legacy_supportLib = "1.0.0"
@@ -84,7 +85,7 @@ dependencies {
 
     // Dagger Android
     kapt "com.google.dagger:dagger-android-processor:$project.daggerVersion"
-    implementation "com.google.dagger:dagger-android-support:$project.daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$project.daggerAndroidSupport"
 
     //Room
     implementation "androidx.room:room-runtime:$project.roomVersion"
