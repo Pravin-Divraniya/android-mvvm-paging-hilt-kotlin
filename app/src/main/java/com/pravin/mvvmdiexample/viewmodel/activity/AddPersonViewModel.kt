@@ -41,10 +41,10 @@ class AddPersonViewModel(dataManager: DataManager):
 
     @Bindable
     fun getPersonAge():String{
-        if(mPerson.age<=0)
-            return ""
+        return if(mPerson.age<=0)
+            ""
         else
-            return mPerson.age.toString()
+            mPerson.age.toString()
     }
 
     @Bindable
@@ -62,7 +62,7 @@ class AddPersonViewModel(dataManager: DataManager):
         return object : MyTextWatcher() {
             override fun onTextChanged(newValue: Any?) {
                 validate()
-                if(!newValue.toString().isNullOrEmpty())
+                if(newValue.toString().isNotEmpty())
                     setPersonAge(newValue.toString().toInt())
                 else
                     setPersonAge(0)
@@ -74,8 +74,8 @@ class AddPersonViewModel(dataManager: DataManager):
     fun getOnSaveClick() = View.OnClickListener { getNavigator()!!.openListActivity(mPerson) }
 
     private fun validate(){
-        val isNameValid = !getPersonName().isNullOrEmpty()
-        val isAgeValid = !getPersonAge().isNullOrEmpty()
+        val isNameValid = getPersonName().isNotEmpty()
+        val isAgeValid = getPersonAge().isNotEmpty()
         isValid.set(isNameValid && isAgeValid)
         notifyChange()
     }

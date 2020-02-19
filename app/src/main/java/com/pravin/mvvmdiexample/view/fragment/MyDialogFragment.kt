@@ -19,7 +19,7 @@ import javax.inject.Inject
 class MyDialogFragment : BaseDialogFragment<FrgMyDialogBinding,
         MyDialogFrgViewModel>(),MyDialogFrgNavigator {
     @Inject
-    protected lateinit var mViewModel: MyDialogFrgViewModel
+    lateinit var mViewModel: MyDialogFrgViewModel
     private var personItem:Person? = null
     private lateinit var mActivity:BaseActivity<*,*>
 
@@ -41,7 +41,7 @@ class MyDialogFragment : BaseDialogFragment<FrgMyDialogBinding,
     }
 
     companion object {
-        private val ARG_PERSON = "mPerson"
+        private const val ARG_PERSON = "mPerson"
         val TAG = MyDialogFragment::class.java.simpleName
 
         fun newInstance(model:Any?): MyDialogFragment {

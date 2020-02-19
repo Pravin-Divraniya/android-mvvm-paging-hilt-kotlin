@@ -1,5 +1,6 @@
 package com.pravin.mvvmdiexample.utils
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
@@ -142,17 +143,17 @@ object LocationUtils{
         // requested if other applications are requesting location at a faster interval.
         // Note: apps running on "O" devices (regardless of targetSdkVersion) may receive updates
         // less frequently than this interval when the app is no longer in the foreground.
-        mLocationRequest.setInterval(ConstantData.UPDATE_INTERVAL)
+        mLocationRequest.interval = ConstantData.UPDATE_INTERVAL
 
         // Sets the fastest rate for active location updates. This interval is exact, and your
         // application will never receive updates faster than this value.
-        mLocationRequest.setFastestInterval(ConstantData.FASTEST_UPDATE_INTERVAL)
-
-        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+        mLocationRequest.fastestInterval = ConstantData.FASTEST_UPDATE_INTERVAL
+    
+        mLocationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
 
         // Sets the maximum time when batched location updates are delivered. Updates may be
         // delivered sooner than this interval.
-        mLocationRequest.setMaxWaitTime(ConstantData.MAX_WAIT_TIME)
+        mLocationRequest.maxWaitTime = ConstantData.MAX_WAIT_TIME
 
         return mLocationRequest
     }
@@ -165,17 +166,19 @@ object HttpClientUtils {
 
             // Create a trust manager that does not validate certificate chains
             val trustAllCerts = arrayOf<TrustManager>(object : X509TrustManager {
-                val allAcceptedIssuers: Array<java.security.cert.X509Certificate>
+                val allAcceptedIssuers: Array<X509Certificate>
                     get() = arrayOf()
 
                 override fun getAcceptedIssuers(): Array<X509Certificate> = allAcceptedIssuers
 
+                @SuppressLint("TrustAllX509TrustManager")
                 @Throws(CertificateException::class)
-                override fun checkClientTrusted(chain: Array<java.security.cert.X509Certificate>, authType: String) {
+                override fun checkClientTrusted(chain: Array<X509Certificate>, authType: String) {
                 }
 
+                @SuppressLint("TrustAllX509TrustManager")
                 @Throws(CertificateException::class)
-                override fun checkServerTrusted(chain: Array<java.security.cert.X509Certificate>, authType: String) {
+                override fun checkServerTrusted(chain: Array<X509Certificate>, authType: String) {
                 }
             })
 
@@ -183,16 +186,12 @@ object HttpClientUtils {
             val sslContext = SSLContext.getInstance("TLS")
             sslContext.init(null, trustAllCerts, java.security.SecureRandom())
             // Create an ssl socket factory with our all-trusting manager
-            val sslSocketFactory = sslContext.getSocketFactory()
+            val sslSocketFactory = sslContext.socketFactory
 
             val builder = OkHttpClient.Builder()
             builder.sslSocketFactory(sslSocketFactory, trustAllCerts[0] as X509TrustManager)
-            builder.hostnameVerifier(object : HostnameVerifier {
-                override fun verify(hostname: String, session: SSLSession): Boolean {
-                    return true
-                }
-            })
-
+            builder.hostnameVerifier { _, _ -> true }
+    
             return builder.build()
         } catch (e: Exception) {
             throw RuntimeException(e)

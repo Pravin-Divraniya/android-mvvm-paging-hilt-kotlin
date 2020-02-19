@@ -54,7 +54,7 @@ abstract class BaseRVAdapter<BM,VM:ListItemViewModel<BM>>(private val datas: Mut
     }
     fun change(newItem:BM,oldItem:BM){
         val position = this.datas.indexOf(oldItem)
-        this.datas.set(position,newItem)
+        this.datas[position] = newItem
         notifyItemChanged(position)
         notifyDataSetChanged()
     }

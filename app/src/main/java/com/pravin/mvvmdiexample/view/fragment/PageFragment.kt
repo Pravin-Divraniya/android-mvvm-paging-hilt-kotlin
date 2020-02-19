@@ -17,7 +17,7 @@ import javax.inject.Inject
 class PageFragment : BaseFragment<FragmentPageBinding, PageFrgViewModel>() {
 
     @Inject
-    protected lateinit var mViewModel: PageFrgViewModel
+    lateinit var mViewModel: PageFrgViewModel
 
     // TODO: Rename and change types of parameters
     private var mParam1: Int = 0
@@ -39,7 +39,7 @@ class PageFragment : BaseFragment<FragmentPageBinding, PageFrgViewModel>() {
     }
 
     companion object {
-        private val ARG_PARAM1 = "no_of_pages"
+        private const val ARG_PARAM1 = "no_of_pages"
 
         /**
          * Use this factory method to create a new instance of

@@ -39,22 +39,22 @@ class RemoteItemViewModel : ListItemViewModel<BaseModel>() {
     }
 
     fun getUrl():String?{
-        when(item){
-            is Photo -> return (item as Photo).url!!
-            is Articles -> return (item as Articles).url
+        return when(item){
+            is Photo -> (item as Photo).url!!
+            is Articles -> (item as Articles).url
             else ->{
-                return ""
+                ""
             }
         }
     }
 
     @Bindable
     fun getThumbImageUrl():String?{
-        when(item){
-            is Photo -> return (item as Photo).thumbnailUrl!!
-            is Articles -> return (item as Articles).urlToImage
+        return when(item){
+            is Photo -> (item as Photo).thumbnailUrl!!
+            is Articles -> (item as Articles).urlToImage
             else ->{
-                return ""
+                ""
             }
         }
     }

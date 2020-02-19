@@ -39,13 +39,13 @@ import javax.inject.Inject
 class RemoteDataFragment : BaseFragment<FrgRemotedatamodelListBinding,
         RemoteDataViewModel>(),RemoteDataFragmentNavigator,RemoteItemNavigator {
     @Inject
-    protected lateinit var mViewModel: RemoteDataViewModel
+    lateinit var mViewModel: RemoteDataViewModel
 
     @Inject
-    protected lateinit var adapter: RemoteDataAdapter
+    lateinit var adapter: RemoteDataAdapter
 
     @Inject
-    protected lateinit var compositeDisposable:CompositeDisposable
+    lateinit var compositeDisposable:CompositeDisposable
 
     override fun getViewModel() = mViewModel
 
@@ -90,7 +90,7 @@ class RemoteDataFragment : BaseFragment<FrgRemotedatamodelListBinding,
                 .subscribe({
                     listItem -> this.adapter.add(listItem)
                 },{
-                    _ -> Toast.makeText(getBaseActivity(),"Error in news list",Toast.LENGTH_LONG).show()
+                    Toast.makeText(getBaseActivity(),"Error in news list",Toast.LENGTH_LONG).show()
                     hideLoading()
                 },{
                     Toast.makeText(getBaseActivity(),"Completed news list stream",Toast.LENGTH_LONG).show()
@@ -110,7 +110,7 @@ class RemoteDataFragment : BaseFragment<FrgRemotedatamodelListBinding,
                 .subscribe({
 
                 },{
-                    _ -> Toast.makeText(getBaseActivity(),"Error in comment list",Toast.LENGTH_LONG).show()
+                    Toast.makeText(getBaseActivity(),"Error in comment list",Toast.LENGTH_LONG).show()
                 },{
                     Toast.makeText(getBaseActivity(),"Completed comment list stream",Toast.LENGTH_LONG).show()
                 })
@@ -126,7 +126,7 @@ class RemoteDataFragment : BaseFragment<FrgRemotedatamodelListBinding,
                 .subscribe({
 
                 },{
-                    _ -> Toast.makeText(getBaseActivity(),"Error in post list",Toast.LENGTH_LONG).show()
+                    Toast.makeText(getBaseActivity(),"Error in post list",Toast.LENGTH_LONG).show()
                 },{
                     Toast.makeText(getBaseActivity(),"Completed post list stream",Toast.LENGTH_LONG).show()
                 })
@@ -142,7 +142,7 @@ class RemoteDataFragment : BaseFragment<FrgRemotedatamodelListBinding,
                 .subscribe({
 
                 },{
-                    _ -> Toast.makeText(getBaseActivity(),"Error in Album list",Toast.LENGTH_LONG).show()
+                    Toast.makeText(getBaseActivity(),"Error in Album list",Toast.LENGTH_LONG).show()
                 },{
                     Toast.makeText(getBaseActivity(),"Completed album list stream",Toast.LENGTH_LONG).show()
                 })
@@ -177,7 +177,7 @@ class RemoteDataFragment : BaseFragment<FrgRemotedatamodelListBinding,
     }
     companion object {
 
-        private val ARG_API_KEY = "api-key"
+        private const val ARG_API_KEY = "api-key"
         val TAG = RemoteDataFragment::class.java.simpleName
 
         @JvmStatic
@@ -193,16 +193,15 @@ class RemoteDataFragment : BaseFragment<FrgRemotedatamodelListBinding,
     override fun onRemoteItemClick(item: BaseModel, view: View?) {
         if(null == view)
             return
-        var url:String
-        when(item){
+        val url:String = when(item){
             is Articles -> {
-                url = item.url
+                item.url
             }
             is Photo -> {
-                url = item.url!!
+                item.url!!
             }
             else -> {
-                url = ""
+                ""
             }
         }
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))

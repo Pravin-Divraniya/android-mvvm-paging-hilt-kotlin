@@ -16,7 +16,7 @@ import javax.inject.Inject
 class AddPersonActivity : BaseActivity<ActivityAddPersonBinding, AddPersonViewModel>(),
         AddPersonActivityNavigator {
     @Inject
-    protected lateinit var viewModel: AddPersonViewModel
+    lateinit var viewModel: AddPersonViewModel
 
     private lateinit var binding:ActivityAddPersonBinding
     private var isUpdate = false
@@ -26,7 +26,7 @@ class AddPersonActivity : BaseActivity<ActivityAddPersonBinding, AddPersonViewMo
         init()
     }
 
-    fun init(){
+    private fun init(){
         binding = getViewDataBinding()
         viewModel.setNavigator(this)
 

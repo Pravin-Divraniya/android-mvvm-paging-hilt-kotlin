@@ -96,8 +96,8 @@ abstract class BaseActivity<out T: ViewDataBinding, out V: BaseViewModel<out Bas
             initLocationFragment()
         }
         task.addOnFailureListener(this){
-            e -> val statusCode = (e as ApiException).statusCode
-            when(statusCode){
+            e ->
+            when((e as ApiException).statusCode){
                 CommonStatusCodes.RESOLUTION_REQUIRED -> {
                     // Location settings are not satisfied, but this can be fixed
                     // by showing the user a dialog.

@@ -13,7 +13,7 @@ import javax.inject.Inject
  */
 class PagerActivity : BaseActivity<ActivityPagerBinding, PagerViewModel>(){
     @Inject
-    protected lateinit var viewModel: PagerViewModel
+    lateinit var viewModel: PagerViewModel
 
     @Inject
     lateinit var adapter:BasePagerAdapter

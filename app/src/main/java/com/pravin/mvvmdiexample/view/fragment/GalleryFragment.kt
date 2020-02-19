@@ -27,10 +27,10 @@ import javax.inject.Inject
 class GalleryFragment : BaseFragment<FragmentGalleryBinding, GalleryViewModel>(), GalleryFragmentNavigator {
 
     @Inject
-    protected lateinit var mViewModel: GalleryViewModel
+    lateinit var mViewModel: GalleryViewModel
 
     @Inject
-    protected lateinit var adapter:GalleryAdapter
+    lateinit var adapter:GalleryAdapter
 
     private val TAG_RETAINED_FRAGMENT = RetainedFragment::class.java.simpleName
 

@@ -24,10 +24,10 @@ class PersonListActivity : BaseActivity<ActivityPersonListBinding, PersonListVie
         PersonListActivityNavigator,PersonListNavigator{
 
     @Inject
-    protected lateinit var viewModel: PersonListViewModel
+    lateinit var viewModel: PersonListViewModel
 
     @Inject
-    protected lateinit var adapter:PersonListAdapter
+    lateinit var adapter:PersonListAdapter
 
     private lateinit var mActivityMainListBinding:ActivityPersonListBinding
     private val INTENT_RESULT_UPDATE_LIST = 0
@@ -38,7 +38,7 @@ class PersonListActivity : BaseActivity<ActivityPersonListBinding, PersonListVie
         init()
     }
 
-    fun init() {
+    private fun init() {
         mActivityMainListBinding = getViewDataBinding()
         viewModel.setNavigator(this)
 
