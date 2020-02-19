@@ -62,13 +62,13 @@ class MainFragment : BaseFragment<FragmentMainBinding,MainFrgViewModel>(),MainFr
     override fun openRemoteDataFragment() {
         actViewModel?.setFrgTitle(getString(R.string.title_remote_data_list_fragment))
 
-        val ft = fragmentManager?.beginTransaction()
-        var fragment = fragmentManager?.findFragmentByTag(RemoteDataFragment.TAG)
+        val ft = requireActivity().supportFragmentManager.beginTransaction()
+        var fragment = requireActivity().supportFragmentManager.findFragmentByTag(RemoteDataFragment.TAG)
 
         if(null == fragment)
             fragment = RemoteDataFragment.newInstance(apiKey)
 
-        ft!!.replace(R.id.frg_container, fragment,
+        ft.replace(R.id.frg_container, fragment,
                 RemoteDataFragment.TAG)
                 .addToBackStack(null)
                 .commit()
@@ -77,13 +77,13 @@ class MainFragment : BaseFragment<FragmentMainBinding,MainFrgViewModel>(),MainFr
     override fun openGalleryViewFragment() {
         actViewModel?.setFrgTitle(getString(R.string.title_gallery_fragment))
 
-        val ft = fragmentManager?.beginTransaction()
-        var fragment = fragmentManager?.findFragmentByTag(GalleryFragment.TAG)
+        val ft = requireActivity().supportFragmentManager.beginTransaction()
+        var fragment = requireActivity().supportFragmentManager.findFragmentByTag(GalleryFragment.TAG)
 
         if(null == fragment)
             fragment = GalleryFragment.newInstance()
 
-        ft!!.replace(R.id.frg_container, fragment,
+        ft.replace(R.id.frg_container, fragment,
                 GalleryFragment.TAG)
                 .addToBackStack(null)
                 .commit()

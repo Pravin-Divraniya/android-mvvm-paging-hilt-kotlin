@@ -1,6 +1,7 @@
 package com.pravin.mvvmdiexample.di.module
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.room.Room
 import com.pravin.mvvmdiexample.app.MyApplication
 import com.pravin.mvvmdiexample.data.local.db.AppDatabase
@@ -57,8 +58,8 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun provideSharedPrefs(context:Context) =
-            context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)!!
+    fun provideSharedPrefs(context:Context): SharedPreferences =
+            context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
 
     @Singleton
     @Provides
