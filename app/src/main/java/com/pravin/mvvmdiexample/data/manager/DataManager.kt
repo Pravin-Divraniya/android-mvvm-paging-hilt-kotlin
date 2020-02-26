@@ -20,24 +20,12 @@ import javax.inject.Singleton
  * Created by Pravin Divraniya on 10/5/2017.
  */
 @Singleton
-class DataManager: IDataManager {
-    private val context:Context
-    private val mSharedPrefsHelper: SharedPrefsHelper
-    private val dbHelper: DbHelper
-    private val apiHelper: ApiHelper
-
-    @Inject
-    constructor(context:Context,
-                dbHelper: IDbHelper,
-                sharedPreHelper: ISharedPrefsHelper,
-                apiHelper: IApiHelper){
-        this.context = context
-        this.mSharedPrefsHelper = sharedPreHelper as SharedPrefsHelper
-        this.dbHelper = dbHelper as DbHelper
-        this.apiHelper = apiHelper as ApiHelper
-    }
-
-
+class DataManager @Inject constructor(private val context: Context, dbHelper: IDbHelper, sharedPreHelper: ISharedPrefsHelper, apiHelper: IApiHelper) : IDataManager {
+    private val mSharedPrefsHelper: SharedPrefsHelper = sharedPreHelper as SharedPrefsHelper
+    private val dbHelper: DbHelper = dbHelper as DbHelper
+    private val apiHelper: ApiHelper = apiHelper as ApiHelper
+    
+    
     override fun setAccessToken(accessToken: String) {
         mSharedPrefsHelper.setAccessToken(accessToken)
     }

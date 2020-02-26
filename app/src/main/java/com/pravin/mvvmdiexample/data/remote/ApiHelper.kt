@@ -15,10 +15,8 @@ import javax.inject.Inject
 /**
  * Created by Pravin Divraniya on 11/13/2017.
  */
-class ApiHelper:IApiHelper {
-    @Inject
-    constructor()
-
+class ApiHelper @Inject constructor() :IApiHelper {
+    
     override fun getPhotos(): Observable<List<Photo>> = Rx2AndroidNetworking.get(ApiUtils.PHOTOS)
             .setPriority(Priority.MEDIUM)
             .build()
