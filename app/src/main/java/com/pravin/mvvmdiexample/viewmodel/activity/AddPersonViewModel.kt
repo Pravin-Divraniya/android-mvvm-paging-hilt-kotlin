@@ -10,11 +10,12 @@ import com.pravin.mvvmdiexample.data.model.db.Person
 import com.pravin.mvvmdiexample.data.model.manager.DataManager
 import com.pravin.mvvmdiexample.view.navigator.AddPersonActivityNavigator
 import com.pravin.mvvmdiexample.viewmodel.base.BaseViewModel
+import javax.inject.Inject
 
 /**
  * Created by Pravin Divraniya on 10/3/2017.
  */
-class AddPersonViewModel(dataManager: DataManager):
+class AddPersonViewModel @Inject constructor(dataManager: DataManager):
         BaseViewModel<AddPersonActivityNavigator>(dataManager) {
 
     private var mPerson: Person = Person("",0)

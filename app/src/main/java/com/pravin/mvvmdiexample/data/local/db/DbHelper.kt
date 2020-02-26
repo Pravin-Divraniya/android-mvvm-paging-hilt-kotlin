@@ -8,14 +8,8 @@ import javax.inject.Singleton
  * Created by Pravin Divraniya on 10/6/2017.
  */
 @Singleton
-class DbHelper : IDbHelper {
-
-    val appDatabase: AppDatabase
-
-    @Inject
-    constructor(appDatabase: AppDatabase) {
-        this.appDatabase = appDatabase
-    }
+class DbHelper @Inject constructor(private val appDatabase: AppDatabase) : IDbHelper {
+    
     override fun getAllPerson(): List<Person> = appDatabase.personDAO().getAllPerson()
 
     override fun insertPerson(person: Person) {

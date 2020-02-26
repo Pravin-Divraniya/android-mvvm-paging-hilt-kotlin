@@ -7,11 +7,12 @@ import androidx.viewpager.widget.ViewPager
 import com.pravin.mvvmdiexample.data.model.manager.DataManager
 import com.pravin.mvvmdiexample.view.navigator.PagerActivityNavigator
 import com.pravin.mvvmdiexample.viewmodel.base.BaseViewModel
+import javax.inject.Inject
 
 /**
  * Created by Pravin Divraniya on 12/15/2017.
  */
-class PagerViewModel(dataManager:DataManager):
+class PagerViewModel @Inject constructor(dataManager:DataManager):
         BaseViewModel<PagerActivityNavigator>(dataManager) {
 
     val adapter = ObservableField<FragmentPagerAdapter>()
