@@ -30,7 +30,7 @@ class MainFragment : BaseFragment<FragmentMainBinding,MainFrgViewModel>(),MainFr
     private var actViewModel:MainViewModel? = null
 
     @Inject
-    protected lateinit var mViewModel: MainFrgViewModel
+    lateinit var mViewModel: MainFrgViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

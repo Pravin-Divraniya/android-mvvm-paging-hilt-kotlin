@@ -12,4 +12,3 @@ interface PersonListNavigator : BaseNavigator{
 interface RemoteItemNavigator:BaseNavigator{
     fun onRemoteItemClick(item:BaseModel,view:View?)
 }
-interface GalleryItemNavigator:BaseNavigator

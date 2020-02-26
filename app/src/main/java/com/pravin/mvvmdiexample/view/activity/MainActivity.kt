@@ -16,14 +16,14 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>()
         ,MainActivityNavigator {
 
     @Inject
-    protected lateinit var viewModel: MainViewModel
+    lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         init()
     }
 
-    fun init(){
+    private fun init(){
         viewModel.setNavigator(this)
         startLocationUpdates()
         openMainFragment()

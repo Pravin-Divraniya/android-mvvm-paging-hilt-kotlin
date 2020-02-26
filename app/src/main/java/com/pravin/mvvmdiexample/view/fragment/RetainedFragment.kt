@@ -12,11 +12,7 @@ import com.pravin.mvvmdiexample.data.model.api.GalleryImages
 class RetainedFragment : Fragment() {
 
     var galleryList:MutableList<GalleryImages>? = null
-        get() = field
-        set(value) {
-            field = value
-        }
-
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
