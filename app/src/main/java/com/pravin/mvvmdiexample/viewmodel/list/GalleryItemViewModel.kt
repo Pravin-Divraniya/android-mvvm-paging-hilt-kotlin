@@ -24,7 +24,7 @@ class GalleryItemViewModel: ListItemViewModel<GalleryImages>() {
     override fun getItem() = galleryImages
 
     @Bindable
-    fun getImageUrl():String? = galleryImages.url
+    fun getImageUrl():String = galleryImages.url
 
     private fun setChecked(isChecked:Boolean){
         galleryImages.isChecked = isChecked
@@ -49,7 +49,7 @@ class GalleryItemViewModel: ListItemViewModel<GalleryImages>() {
 
     companion object {
         @JvmStatic
-        @BindingAdapter("bind:url")
+        @BindingAdapter("url")
         fun loadImage(view:ImageView,url:String){
             Glide.with(view)
                     .setDefaultRequestOptions(defaultRequest(R.drawable.placeholder,R.drawable.noimageplaceholder))

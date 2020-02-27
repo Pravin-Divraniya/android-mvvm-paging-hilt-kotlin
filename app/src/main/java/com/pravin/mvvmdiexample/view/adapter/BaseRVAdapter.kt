@@ -62,11 +62,11 @@ abstract class BaseRVAdapter<BM,VM:ListItemViewModel<BM>>(private val datas: Mut
     companion object {
         class BaseViewHolder<Type,VM: ListItemViewModel<Type>>
                 (view:View,viewModel:VM,mDataBinding:ViewDataBinding): RecyclerView.ViewHolder(view) {
-            private val mDataBinding:ViewDataBinding = mDataBinding
+            private val mDataBinding:ViewDataBinding? = mDataBinding
             private val mViewModel:VM = viewModel
             fun setItem(item:Type){
                 mViewModel.setItem(item)
-                mDataBinding.executePendingBindings()
+                mDataBinding?.executePendingBindings()
             }
         }
     }

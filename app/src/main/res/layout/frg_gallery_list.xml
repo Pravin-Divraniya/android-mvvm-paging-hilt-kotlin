@@ -17,14 +17,14 @@
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        bind:url="@{galleryItemViewModel.imageUrl}"
-        android:onClick="@{galleryItemViewModel.onImageClickListener}"/>
+        url="@{galleryItemViewModel.imageUrl}"
+        android:onClick="@{galleryItemViewModel.onImageClickListener}"
+        android:contentDescription="@string/title_gallery_fragment" />
 
     <CheckBox
         android:id="@+id/checkBox"
