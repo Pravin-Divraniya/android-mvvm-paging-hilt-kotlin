@@ -39,7 +39,7 @@
 
         <receiver
             android:name="com.pravin.mvvmdiexample.receiver.LocationReceiver"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.pravin.mvvmdiexample.receiver.LocationReceiver.ACTION_PROCESS_UPDATES" />
             </intent-filter>
