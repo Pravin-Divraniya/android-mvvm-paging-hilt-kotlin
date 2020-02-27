@@ -11,10 +11,12 @@ import io.reactivex.Flowable
 import io.reactivex.Observable
 import java.io.File
 import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * Created by Pravin Divraniya on 11/13/2017.
  */
+@Singleton
 class ApiHelper @Inject constructor() :IApiHelper {
     
     override fun getPhotos(): Observable<List<Photo>> = Rx2AndroidNetworking.get(ApiUtils.PHOTOS)

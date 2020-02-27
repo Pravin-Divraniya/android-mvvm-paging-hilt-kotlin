@@ -16,18 +16,18 @@ import dagger.android.ContributesAndroidInjector
  * Created by Pravin Divraniya on 10/6/2017.
  */
 @Module
-abstract class ActivityBuilder {
-
+interface ActivityBuilder {
+	
     @ContributesAndroidInjector(modules = [(MainActivityModule::class), (RemoteDataFrgProvider::class),
         (GalleryFrgProvider::class),(MainFrgProvider::class)])
-    abstract fun bindMainActivity(): MainActivity
+    fun bindMainActivity(): MainActivity
 
     @ContributesAndroidInjector(modules = [(AddPersonActivityModule::class)])
-    abstract fun bindAddPersonActivity(): AddPersonActivity
+    fun bindAddPersonActivity(): AddPersonActivity
 
     @ContributesAndroidInjector(modules = [(PersonListActivityModule::class), (MyDialogFrgProvider::class)])
-    abstract fun bindPersonListActivity(): PersonListActivity
+    fun bindPersonListActivity(): PersonListActivity
 
     @ContributesAndroidInjector(modules = [(PagerActivityModule::class), (PageFrgProvider::class)])
-    abstract fun bindPagerActivity():PagerActivity
+    fun bindPagerActivity():PagerActivity
 }

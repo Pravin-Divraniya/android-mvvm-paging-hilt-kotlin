@@ -11,8 +11,6 @@ import com.pravin.mvvmdiexample.data.local.db.prefs.ISharedPrefsHelper
 import com.pravin.mvvmdiexample.data.local.db.prefs.SharedPrefsHelper
 import com.pravin.mvvmdiexample.data.remote.ApiHelper
 import com.pravin.mvvmdiexample.data.remote.IApiHelper
-import com.pravin.mvvmdiexample.di.annotation.DatabaseInfo
-import com.pravin.mvvmdiexample.di.annotation.PreferenceInfo
 import com.pravin.mvvmdiexample.utils.ConstantData.DB_NAME
 import com.pravin.mvvmdiexample.utils.ConstantData.DB_VERSION
 import com.pravin.mvvmdiexample.utils.ConstantData.SHARED_PREF_NAME
@@ -29,15 +27,15 @@ class AppModule {
     @Provides
     fun provideContext(application: MyApplication):Context = application
 
-    @DatabaseInfo
+    @Singleton
     @Provides
     fun provideDatabaseName() = DB_NAME
 
-    @DatabaseInfo
+    @Singleton
     @Provides
     fun provideDatabaseVersion() = DB_VERSION
 
-    @PreferenceInfo
+    @Singleton
     @Provides
     fun providePrefName() = SHARED_PREF_NAME
 

@@ -10,7 +10,7 @@ import com.pravin.mvvmdiexample.data.model.db.Person
  * Created by Pravin Divraniya on 10/5/2017.
  */
 @Database(entities = [Person::class],
-            version = ConstantData.DB_VERSION)
+            version = ConstantData.DB_VERSION, exportSchema = true)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun personDAO(): PersonDAO
 }
