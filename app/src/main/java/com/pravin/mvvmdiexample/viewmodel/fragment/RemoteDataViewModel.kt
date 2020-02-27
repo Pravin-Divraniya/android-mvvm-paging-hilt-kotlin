@@ -21,14 +21,4 @@ class RemoteDataViewModel(dataManager: DataManager) :
     fun getAlbums() = getDataManager().getAlbums()
     fun getComments() = getDataManager().getComments()
     fun getPosts() = getDataManager().getPosts()
-
-    companion object {
-        @JvmStatic
-        @BindingAdapter("app:mAdapter")
-        fun setAdapter(view: RecyclerView,adapter: RecyclerView.Adapter<out RecyclerView.ViewHolder>?){
-            if(null == adapter)
-                return
-            view.adapter = adapter
-        }
-    }
 }

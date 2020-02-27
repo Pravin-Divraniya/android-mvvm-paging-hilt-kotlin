@@ -46,14 +46,4 @@ class GalleryViewModel(dataManager: DataManager):
         }).start()
         return imageList
     }
-
-    companion object {
-        @JvmStatic
-        @BindingAdapter("mAdapter")
-        fun setAdapter(view: RecyclerView, adapter:GalleryAdapter?){
-            if(null == adapter)
-                return
-            view.adapter = adapter
-        }
-    }
 }

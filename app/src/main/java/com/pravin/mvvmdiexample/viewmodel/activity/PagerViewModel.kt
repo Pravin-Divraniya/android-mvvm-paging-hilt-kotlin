@@ -14,16 +14,5 @@ import javax.inject.Inject
  */
 class PagerViewModel @Inject constructor(dataManager:DataManager):
         BaseViewModel<PagerActivityNavigator>(dataManager) {
-
     val adapter = ObservableField<FragmentPagerAdapter>()
-
-    companion object {
-        @JvmStatic
-        @BindingAdapter("app:mAdapter")
-        fun setPagerAdapter(viewPager: ViewPager, pagerAdapter:FragmentPagerAdapter?){
-            if(null == pagerAdapter)
-                return
-            viewPager.adapter = pagerAdapter
-        }
-    }
 }

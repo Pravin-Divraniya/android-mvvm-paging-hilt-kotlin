@@ -38,16 +38,6 @@ class RemoteItemViewModel : ListItemViewModel<BaseModel>() {
         }
     }
 
-    fun getUrl():String?{
-        return when(item){
-            is Photo -> (item as Photo).url!!
-            is Articles -> (item as Articles).url
-            else ->{
-                ""
-            }
-        }
-    }
-
     @Bindable
     fun getThumbImageUrl():String?{
         return when(item){
@@ -61,17 +51,5 @@ class RemoteItemViewModel : ListItemViewModel<BaseModel>() {
 
     fun onItemClick(): View.OnClickListener{
         return View.OnClickListener { p0 -> (getNavigator() as RemoteItemNavigator).onRemoteItemClick(item,p0) }
-    }
-
-    companion object {
-        @JvmStatic
-        @BindingAdapter("bind:imageUrl")
-        fun loadImages(view:ImageView,url:String){
-            Glide.with(view)
-                    .setDefaultRequestOptions(defaultRequest(R.drawable.placeholder, R.drawable.noimageplaceholder))
-                    .load(url)
-                    .thumbnail(0.2F)
-                    .into(view)
-        }
     }
 }
