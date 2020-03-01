@@ -4,18 +4,18 @@ import android.content.res.Resources
 import android.view.View
 import android.widget.CheckBox
 import androidx.databinding.Bindable
-import androidx.databinding.BindingAdapter
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
-import androidx.recyclerview.widget.RecyclerView
 import com.pravin.mvvmdiexample.R
 import com.pravin.mvvmdiexample.data.model.api.GalleryImages
 import com.pravin.mvvmdiexample.data.model.manager.DataManager
+import com.pravin.mvvmdiexample.di.annotation.ActivityContext
 import com.pravin.mvvmdiexample.view.adapter.GalleryAdapter
 import com.pravin.mvvmdiexample.view.navigator.GalleryFragmentNavigator
 import com.pravin.mvvmdiexample.viewmodel.base.BaseViewModel
 
+@ActivityContext
 class GalleryViewModel(dataManager: DataManager):
     BaseViewModel<GalleryFragmentNavigator>(dataManager){
 

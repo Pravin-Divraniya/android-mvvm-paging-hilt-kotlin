@@ -10,6 +10,6 @@ import dagger.android.ContributesAndroidInjector
  */
 @Module
 abstract class PageFrgProvider {
-    @ContributesAndroidInjector(modules = arrayOf(PageFrgModule::class))
+    @ContributesAndroidInjector(modules = [PageFrgModule::class])
     abstract fun providePageFragment():PageFragment
 }
