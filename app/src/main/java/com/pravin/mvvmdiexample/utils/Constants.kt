@@ -8,12 +8,16 @@ import android.os.Build
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
+import androidx.databinding.BindingAdapter
+import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.pravin.mvvmdiexample.BuildConfig
 import com.pravin.mvvmdiexample.utils.ConstantData.BASE_URL
 import com.google.android.gms.location.LocationRequest
+import com.pravin.mvvmdiexample.R
 import okhttp3.OkHttpClient
 import java.security.cert.X509Certificate
 import javax.net.ssl.*
@@ -201,3 +205,18 @@ object HttpClientUtils {
 
 fun defaultRequest(placeHolder:Int, errorPlaceHolder:Int) =
         RequestOptions.placeholderOf(placeHolder).error(errorPlaceHolder)
+
+object LoadImage{
+    @JvmStatic
+    @BindingAdapter("url")
+    fun loadImage(view: ImageView, url:String){
+        var imageUrl = url
+        if(imageUrl.contains("http://"))
+            imageUrl = imageUrl.replace("http://","https://")
+        Glide.with(view)
+                .setDefaultRequestOptions(defaultRequest(R.drawable.placeholder, R.drawable.noimageplaceholder))
+                .load(imageUrl)
+                .thumbnail(0.2F)
+                .into(view)
+    }
+}

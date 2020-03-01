@@ -1,7 +1,5 @@
 package com.pravin.mvvmdiexample.di.builder
 
-import com.pravin.mvvmdiexample.di.module.AddPersonActivityModule
-import com.pravin.mvvmdiexample.di.module.MainActivityModule
 import com.pravin.mvvmdiexample.di.module.PagerActivityModule
 import com.pravin.mvvmdiexample.di.module.PersonListActivityModule
 import com.pravin.mvvmdiexample.di.module.provider.*
@@ -18,11 +16,11 @@ import dagger.android.ContributesAndroidInjector
 @Module
 interface ActivityBuilder {
 	
-    @ContributesAndroidInjector(modules = [(MainActivityModule::class), (RemoteDataFrgProvider::class),
+    @ContributesAndroidInjector(modules = [(RemoteDataFrgProvider::class),
         (GalleryFrgProvider::class),(MainFrgProvider::class)])
     fun bindMainActivity(): MainActivity
 
-    @ContributesAndroidInjector(modules = [(AddPersonActivityModule::class)])
+    @ContributesAndroidInjector
     fun bindAddPersonActivity(): AddPersonActivity
 
     @ContributesAndroidInjector(modules = [(PersonListActivityModule::class), (MyDialogFrgProvider::class)])

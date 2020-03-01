@@ -12,11 +12,7 @@ import dagger.Provides
  */
 @Module
 class PersonListActivityModule {
-
-    @Provides
-    fun providePersonListViewModel(dataManager: DataManager) =
-            PersonListViewModel(dataManager)
-
+    
     @Provides
     fun providePersonListAdapter(activity: PersonListActivity) =
             PersonListAdapter(ArrayList(),activity)

@@ -10,6 +10,6 @@ import dagger.android.ContributesAndroidInjector
  */
 @Module
 abstract class MyDialogFrgProvider {
-    @ContributesAndroidInjector(modules = arrayOf(MyDialogFrgModule::class))
+    @ContributesAndroidInjector(modules = [MyDialogFrgModule::class])
     abstract fun provideMyDialogFragmentFactory() : MyDialogFragment
 }

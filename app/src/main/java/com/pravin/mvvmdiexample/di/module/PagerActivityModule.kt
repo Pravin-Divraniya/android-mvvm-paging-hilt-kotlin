@@ -12,9 +12,6 @@ import dagger.Provides
  */
 @Module
 class PagerActivityModule {
-    @Provides
-    fun providePagerViewModel(dataManager: DataManager)
-            = PagerViewModel(dataManager)
 
     @Provides
     fun providePagerAdapter(activity:PagerActivity)

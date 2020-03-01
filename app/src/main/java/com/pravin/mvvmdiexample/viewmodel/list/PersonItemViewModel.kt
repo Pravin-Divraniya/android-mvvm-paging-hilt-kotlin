@@ -4,12 +4,15 @@ import android.view.View
 import androidx.databinding.Bindable
 import androidx.databinding.library.baseAdapters.BR
 import com.pravin.mvvmdiexample.data.model.db.Person
+import com.pravin.mvvmdiexample.di.annotation.ActivityContext
 import com.pravin.mvvmdiexample.view.navigator.PersonListNavigator
 import com.pravin.mvvmdiexample.viewmodel.base.ListItemViewModel
 
 /**
  * Created by Pravin Divraniya on 10/10/2017.
  */
+
+@ActivityContext
 class PersonItemViewModel : ListItemViewModel<Person>() {
 
     private lateinit var person: Person
