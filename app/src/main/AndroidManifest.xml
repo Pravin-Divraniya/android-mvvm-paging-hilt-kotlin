@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name="com.pravin.mvvmdiexample.app.MyApplication"
+        android:name=".app.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,38 +16,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.pravin.mvvmdiexample.view.activity.MainActivity"
-            android:screenOrientation="sensor">
+            android:name=".view.activity.MainActivity"
+            android:label="@string/title_activity_main">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.pravin.mvvmdiexample.view.activity.PersonListActivity"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity
-            android:name="com.pravin.mvvmdiexample.view.activity.AddPersonActivity"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-
-        <service
-            android:name="com.pravin.mvvmdiexample.services.LocationService"
-            android:exported="false" />
-
-        <receiver
-            android:name="com.pravin.mvvmdiexample.receiver.LocationReceiver"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.pravin.mvvmdiexample.receiver.LocationReceiver.ACTION_PROCESS_UPDATES" />
-            </intent-filter>
-        </receiver>
-
-        <activity android:name="com.pravin.mvvmdiexample.view.activity.PagerActivity"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
     </application>
 
 </manifest>

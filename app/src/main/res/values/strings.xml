@@ -4,36 +4,10 @@
     <string name="btn_save">Save</string>
     <string name="lbl_name">Name</string>
     <string name="lbl_age">Age</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 
-    <!--Tool bar titles-->
-    <string name="title_main_activity">Home Screen</string>
-    <string name="title_add_person_activity">Add person</string>
-    <string name="title_person_list_activity">Person List</string>
-    <string name="title_remote_data_list_fragment">Remote data list</string>
-    <string name="title_gallery_fragment">Image Gallery</string>
-    <string name="title_main_fragment">Main Screen</string>
-    <string name="title_view_pager_activity">View Pager Demo</string>
-
-    <!--Strings for main activity-->
-    <string name="btn_local_db">Local DB</string>
-    <string name="btn_remote_data">Remote Data</string>
-    <string name="btn_view_pager">View Pager</string>
-    <string name="btn_gallery_view">Gallery View</string>
-
-    <!-- Intent extra strings -->
-    <string name="intent_person_receive_extra">EXTRA_PERSON_RECEIVE</string>
-    <string name="intent_person_send_extra">EXTRA_PERSON_SEND</string>
-    <string name="intent_is_update_person_extra">EXTRA_IS_UPDATE_PERSON</string>
-
-    <!--Strings for dialog-->
-    <string name="btn_delete">Delete</string>
-    <string name="btn_update">Update</string>
-    <string name="dialog_title_confirm">Confirm your action</string>
-
-    <!-- Strings for Gallery fragment -->
-    <string name="cb_select_all">Select All</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

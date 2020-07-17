@@ -67,61 +67,37 @@ android {
             path 'CMakeLists.txt'
         }
     }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
+    def nav_version = "2.3.0"
+
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-
-    //Support libs
-    implementation "androidx.appcompat:appcompat:$project.androidx"
-    implementation "androidx.legacy:legacy-support-v4:$project.legacy_supportLib"
-    implementation "androidx.constraintlayout:constraintlayout:$project.constraintLayout"
-    implementation "com.google.android.material:material:$project.androidx"
-    implementation "androidx.recyclerview:recyclerview:$project.androidx"
-    implementation "androidx.cardview:cardview:$project.cardview"
-
-    testImplementation "junit:junit:$project.jUnit"
-    androidTestImplementation("androidx.test.espresso:espresso-core:$project.espresso", {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-
-    //Kotlin
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.3.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
-    // Dagger core
-    kapt "com.google.dagger:dagger-compiler:$project.daggerVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
-    // Dagger Android
-    kapt "com.google.dagger:dagger-android-processor:$project.daggerVersion"
-    implementation "com.google.dagger:dagger-android-support:$project.daggerAndroidSupport"
+    /* Testing dependencies */
 
-    //Room
-    implementation "androidx.room:room-runtime:$project.roomVersion"
-    kapt "androidx.room:room-compiler:$project.roomVersion"
+    // AndroidJUnitRunner and JUnit Rules
+    androidTestImplementation 'androidx.test:rules:1.2.0'
 
-    //Fast Rx android networking lib
-    implementation "com.amitshekhar.android:rx2-android-networking:$project.fastAndroidNetworking"
+    // Assertions
+    testImplementation 'androidx.test.ext:truth:1.2.0'
+    testImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
 
-    //Reactive
-    implementation "io.reactivex.rxjava2:rxandroid:$project.rxAndroid"
-    implementation "io.reactivex.rxjava2:rxkotlin:$project.rxkotlin"
 
-    //Android default location services
-    implementation "com.google.android.gms:play-services-location:$project.locationServices"
-
-    //Kotlin coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$project.kotlinCoroutines"
-
-    //Kotlin reflection
-    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
-
-    //Run time permission library for Android M and higher devices
-    implementation "com.karumi:dexter:$project.dexter"
-
-    //Glide image loading lib
-    implementation "com.github.bumptech.glide:glide:$project.glide"
-    kapt "com.github.bumptech.glide:compiler:$project.glide"
-
-    //arch component lifecycle extensions
-    implementation "androidx.lifecycle:lifecycle-extensions:$project.lifecycle"
+    //Espresso dependencies
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
