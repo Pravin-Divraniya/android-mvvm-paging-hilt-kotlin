@@ -1,13 +1,16 @@
 package com.pravin.mvvmdiexample.view.activity.ui.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.cachedIn
+import com.pravin.mvvmdiexample.data.repository.ItemRepository
+import com.pravin.mvvmdiexample.paging.ItemPageSource
 
-class HomeViewModel : ViewModel() {
-	
-	private val _text = MutableLiveData<String>().apply {
-		value = "This is home Fragment"
-	}
-	val text: LiveData<String> = _text
+class HomeViewModel @ViewModelInject constructor(
+	repository: ItemRepository
+	) : ViewModel() {
+	val flowRemoteAndDb = repository.getRemoteAndLocalFlow()
 }
