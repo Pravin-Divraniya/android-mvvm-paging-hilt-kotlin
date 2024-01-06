@@ -1,5 +1,5 @@
 # Android MVVM Pagging3(With load more and error UI) + Hilt 
-This is a Sample app demonstrate paging in android using [paging 3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview) library. It uses [Rick and Morty api](https://rickandmortyapi.com) using jetpack architecture components.
+This is a Sample app demonstrating paging in Android using [paging 3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview) library. It uses [Rick and Morty API](https://rickandmortyapi.com) using jetpack architecture components.
 
 ## Libraries:
 * <a href="https://developer.android.com/topic/libraries/architecture/viewmodel">ViewModel</a>
